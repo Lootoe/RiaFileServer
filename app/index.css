@@ -1,0 +1,232 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+
+li {
+    list-style: none;
+}
+
+
+.box {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #212529;
+}
+
+.container {
+    margin: 10px;
+    display: flex;
+    /* app的固定大小 */
+    border: 1px solid #adb5bd;
+}
+
+/* ---------------------------------------------------- */
+
+.left {
+    width: 60%;
+}
+
+.left .l-top {
+    padding: 20px 0;
+}
+
+.left .l-top .label {
+    width: 60px;
+    text-align: center;
+    padding-left: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.left .l-top .path-box {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+
+.left .l-top .path-box #path {
+    flex: 1;
+    /* 字体溢出隐藏,并且垂直居中 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    background-color: #212529;
+    border: 1px solid #adb5bd;
+}
+
+.left .l-top .path-box #path-btn {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 2px;
+    font-size: 12px;
+    background-color: #495057;
+    border: 1px solid #adb5bd;
+}
+
+.left .l-top .path-box #path-btn:hover {
+    background-color: #212529;
+}
+
+
+/* ---------------------------------------------------- */
+
+
+.left .l-top .port-box {
+    display: flex;
+    align-items: center;
+}
+
+.left .l-top .port-box input {
+    outline: none;
+    border: none;
+    background-color: #212529;
+    border: 1px solid #adb5bd;
+    height: 40px;
+    padding: 0 10px;
+}
+
+.left .l-top #submit {
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #495057;
+    border: 1px solid #adb5bd;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+    margin: 0 20px;
+}
+
+.left .l-top #submit:hover {
+    background-color: #212529;
+}
+
+/* ------------------------------------------------ */
+
+
+.left .l-middle {
+    border-top: 1px solid #adb5bd;
+}
+
+.left .l-middle h3 {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.left .l-middle #user-list {
+    height: 160px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #212529;
+    border: 1px solid #adb5bd;
+    border-left: none;
+    border-right: none;
+}
+
+.left .l-middle #user-list::-webkit-scrollbar {
+    display: none;
+}
+
+.left .l-middle #user-list li {
+    font-size: 12px;
+    padding: 10px;
+}
+
+.left .l-middle #user-list li:hover {
+    background-color: #495057;
+}
+
+/* ----------------------------------------------------- */
+
+.left .l-bottom {
+    padding: 10px 0;
+}
+
+.left .l-bottom div {
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+    border: 1px solid #adb5bd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.left .l-bottom div input {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.left .l-bottom div .icon {
+    width: 32px;
+    transition: all .3s;
+}
+
+/* ----------------------------------------------------- */
+
+.right {
+    width: 40%;
+    border-left: 1px solid #adb5bd;
+}
+
+.right .r-top #server-info {
+    display: block;
+    height: 50px;
+    border-bottom: 1px solid #adb5bd;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    color: #fdfcdc;
+    cursor: pointer;
+}
+
+.right .r-top #server-info:hover {
+    text-decoration: underline;
+}
+
+/* ----------------------------------------------------- */
+
+.right .r-bottom {
+    padding: 20px;
+    height: calc(100% - 90px);
+}
+
+.right .r-bottom #user-info {
+    height: 360px;
+    overflow: auto;
+}
+
+.right .r-bottom #user-info::-webkit-scrollbar {
+    display: none;
+}
+
+.right .r-bottom #user-info li {
+    font-size: 12px;
+    padding: 10px;
+}
+
+.right .r-bottom #user-info li:hover {
+    background-color: #495057;
+}

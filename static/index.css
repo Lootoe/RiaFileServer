@@ -1,0 +1,188 @@
+/* --------------------------全局------------------------------ */
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: all .3s;
+}
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    width: 24px;
+}
+
+:root {
+    --color: #2f3640;
+}
+
+/* --------------------------根据设备调整宽度------------------------------ */
+
+/* 手机和PC的宽度占比 */
+@media screen and (min-width:600px) {
+    .container {
+        width: 80%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .container {
+        width: 94%;
+        height: 100%;
+    }
+}
+
+
+/* --------------------------标题------------------------------ */
+
+.container .title h1 {
+    text-align: center;
+    line-height: 80px;
+    background-color: var(--color);
+    font-size: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+/* --------------------------导航栏------------------------------ */
+
+.navbar {
+    height: 50px;
+
+}
+
+.navbar .breadcrumb::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar .breadcrumb {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    background-color: var(--color);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.navbar .breadcrumb li {
+    height: 15px;
+    line-height: 15px;
+    padding: 0 16px;
+    border-right: 1px solid #fff;
+}
+
+.navbar .breadcrumb li:first-of-type{
+    border: none;
+}
+
+.navbar .breadcrumb li a {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    /* 防止文件夹名称太长 */
+    max-width: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.navbar .breadcrumb li a:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+/* --------------------------文件列表------------------------------ */
+
+.container .table {
+    width: 100%;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+
+.container .table::-webkit-scrollbar {
+    display: none;
+}
+
+.table .row {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+    background-color: var(--color);
+}
+
+.table .header {
+    position: sticky;
+    top: 0;
+}
+
+.table .row .type-box {
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.table .row .download-box {
+    width: 80px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table .row .download-box .download-btn {
+    width: 30px;
+    height: 30px;
+    background-color: #4caf50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.table .row .download-box .download-btn:hover {
+    background-color: #2e7d32;
+}
+
+.table .row .cell {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table .row .cell span {
+    font-size: 13px;
+    max-width: 80px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* --------------------------详细信息------------------------------ */
+
+.bottom {
+    background-color: var(--color);
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}

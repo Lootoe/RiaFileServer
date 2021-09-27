@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="left">
+                <div class="l-top">
+                    <!-- 路径 -->
+                    <div class="path-box">
+                        <div class="label">路径</div>
+                        <!-- 用于展示云盘路径 -->
+                        <div id="path"></div>
+                        <!-- 用于通知electron打开对话框选择云盘路径 -->
+                        <div id="path-btn">选择</div>
+                    </div>
+                    <!-- 端口 -->
+                    <div class="port-box">
+                        <div class="label">端口</div>
+                        <!-- 用于配置服务器启动的端口 -->
+                        <input type="text" id="port">
+                        <div id="submit">提交</div>
+                    </div>
+                </div>
+
+                <!-- 用户IP列表 -->
+                <div class="l-middle">
+                    <h3>用户列表</h3>
+                    <ul id="user-list">
+                    </ul>
+                </div>
+
+                <!-- 服务器开启与关闭按钮 -->
+                <div class="l-bottom">
+                    <div id="switch" class="start">
+                        <img src="./img/start.png" class="icon">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="right">
+                <!-- 服务器地址 -->
+                <div class="r-top">
+                    <a id="server-info"></a>
+                </div>
+                
+                <!-- 服务器信息 -->
+                <div class="r-bottom">
+                    <ul id="user-info">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./render.js"></script>
+</body>
+
+</html>
