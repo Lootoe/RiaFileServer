@@ -191,7 +191,7 @@ li {
     border-left: 1px solid #adb5bd;
 }
 
-.right .r-top #server-info {
+.right .r-top #server-addr {
     display: block;
     height: 50px;
     border-bottom: 1px solid #adb5bd;
@@ -202,7 +202,7 @@ li {
     cursor: pointer;
 }
 
-.right .r-top #server-info:hover {
+.right .r-top #server-addr:hover {
     text-decoration: underline;
 }
 

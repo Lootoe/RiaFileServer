@@ -1,10 +1,7 @@
 const os = require('os');
 const fs = require("fs");
 const path = require("path");
-
-// 读取config.json
-const configJson = fs.readFileSync(path.resolve(__dirname, 'config.json'), 'utf-8');
-let config = JSON.parse(configJson);
+const configPath = path.resolve(__dirname, "../", "config.json")
 
 // 获取本机IP
 function getIPAddress() {
@@ -14,21 +11,26 @@ function getIPAddress() {
         for (var i = 0; i < iface.length; i++) {
             var alias = iface[i];
             if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
-                // return alias.address;
-                return `http://${alias.address}:${config.port}`
+                return `http://${alias.address}:${load().port}`
             }
         }
     }
 }
 
-// 将配置写进配置文件
-function save() {
-    const configJson = JSON.stringify(config);
-    fs.writeFileSync(path.resolve(__dirname, 'config.json'), configJson, 'utf-8')
+// 获取配置文件
+function load() {
+    // 从整个应用根目录获取
+    return JSON.parse(fs.readFileSync(configPath))
 }
+
+// 将配置写进配置文件
+function save(config) {
+    fs.writeFileSync(configPath, JSON.stringify(config), 'utf-8');
+}
+
 
 module.exports = {
     getIPAddress,
-    config,
+    load,
     save,
 }

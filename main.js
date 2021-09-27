@@ -1,7 +1,7 @@
 const { app, BrowserWindow, Menu, dialog, ipcMain, shell } = require('electron')
 
 // 隐藏菜单栏
-Menu.setApplicationMenu(null)
+// Menu.setApplicationMenu(null)
 
 let win = null
 function createWindow() {
@@ -9,7 +9,7 @@ function createWindow() {
         width: 800,
         height: 520,
         title: 'RiaFS',
-        resizable: false,
+        // resizable: false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,

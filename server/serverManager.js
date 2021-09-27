@@ -8,8 +8,9 @@ class ServerManager {
     serverThread = null     // 服务器线程
     serverPath = null       // 服务器文件的路径
     onOpen = null           // 服务器开启事件
-    onclose = null          // 服务器关闭事件
+    onClose = null          // 服务器关闭事件
     state = false           //服务器状态，开启(true)/关闭(close)
+    config = null
 
     constructor(serverPath) {
         this.serverPath = serverPath;
@@ -22,7 +23,6 @@ class ServerManager {
         this.serverThread = fork(this.serverPath);
 
         this.serverThread.on('message', data => {
-            console.log(data.msg);
             if (this.handler) this.handler(data)
         })
     }
@@ -30,7 +30,7 @@ class ServerManager {
     // 关闭服务器
     close() {
         this.state = false;
-        if (this.onclose) this.onclose();
+        if (this.onClose) this.onClose();
         this.serverThread.kill();
     }
 

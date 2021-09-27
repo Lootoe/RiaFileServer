@@ -7,11 +7,11 @@ const static = require("koa-static")
 //utils
 const path = require('path')
 const fs = require('fs')
-const archiver = require('archiver');
-const { config } = require("../utils")
+const archiver = require('archiver')
+const { load } = require("../utils")
+const config = load()
 //core
 const ClientManager = require("./file")
-
 
 process.send({
     type: 'info',
@@ -27,7 +27,6 @@ app
     .use(router.allowedMethods());
 
 let CM = new ClientManager(config.rootPath);
-
 process.send({
     type: 'info',
     msg: '服务器初始化完毕！'
